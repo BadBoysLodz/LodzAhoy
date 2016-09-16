@@ -78,8 +78,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   });
+    
+  $stateProvider
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html'
+  });
+ 
+  $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });
