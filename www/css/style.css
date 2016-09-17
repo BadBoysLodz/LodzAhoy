@@ -1,1 +1,14 @@
 /* Empty. Add your own CSS if you like */
+
+a.login {
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+button.login {
+  margin-right: 15px; 
+  top: 20px;
+  height: 93px;
+  float: right;
+}
