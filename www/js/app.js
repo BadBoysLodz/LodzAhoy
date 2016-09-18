@@ -40,41 +40,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.profile', {
+    url: '/profile',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.history', {
+      url: '/history',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-history': {
+          templateUrl: 'templates/tab-history.html',
+          controller: 'HistoryCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+  
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.ranking', {
+    url: '/ranking',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-ranking': {
+        templateUrl: 'templates/tab-ranking.html',
+        controller: 'RankingCtrl'
+      }
+    }
+  })
+  
+  .state('tab.settings', {
+    url: '/settings',
+    views: {
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   });
@@ -84,6 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/login',
     templateUrl: 'templates/login.html'
   });
+<<<<<<< HEAD
 
   $stateProvider
   .state('loading', {
@@ -95,11 +98,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('developer', {
     url: '/developer',
     templateUrl: 'templates/developer.html'
+=======
+  
+  $stateProvider
+  .state('newgame', {
+    url: '/newgame',
+    templateUrl: 'templates/newgame.html',
+    controller: 'NewGameCtrl'
+>>>>>>> master
   });
 
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
+<<<<<<< HEAD
   $urlRouterProvider.otherwise('/developer');
+=======
+  $urlRouterProvider.otherwise('/tab/history');
+>>>>>>> master
 
 });
