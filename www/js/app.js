@@ -80,41 +80,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   });
-
+    
   $stateProvider
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html'
   });
-<<<<<<< HEAD
-
-  $stateProvider
-  .state('loading', {
-    url: '/loading',
-    templateUrl: 'templates/loading.html'
-  });
-
+  
   $stateProvider
   .state('developer', {
     url: '/developer',
     templateUrl: 'templates/developer.html'
-=======
+  });
+
   
   $stateProvider
   .state('newgame', {
     url: '/newgame',
     templateUrl: 'templates/newgame.html',
     controller: 'NewGameCtrl'
->>>>>>> master
   });
 
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-<<<<<<< HEAD
   $urlRouterProvider.otherwise('/developer');
-=======
-  $urlRouterProvider.otherwise('/tab/history');
->>>>>>> master
 
 });
