@@ -59,13 +59,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+  
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.ranking', {
+    url: '/ranking',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-ranking': {
+        templateUrl: 'templates/tab-ranking.html',
+        controller: 'RankingCtrl'
+      }
+    }
+  })
+  
+  .state('tab.settings', {
+    url: '/settings',
+    views: {
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   });
@@ -75,7 +86,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/login',
     templateUrl: 'templates/login.html'
   });
- 
+  
+  $stateProvider
+  .state('newgame', {
+    url: '/newgame',
+    templateUrl: 'templates/newgame.html',
+    controller: 'NewGameCtrl'
+  });
+
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
