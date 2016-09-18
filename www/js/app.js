@@ -93,6 +93,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/developer.html'
   });
 
+  $stateProvider
+  .state('loading', {
+    url: '/loading',
+    templateUrl: 'templates/loading.html'
+  });
   
   $stateProvider
   .state('newgame', {
