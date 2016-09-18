@@ -86,6 +86,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   $stateProvider
+  .state('loading', {
+    url: '/loading',
+    templateUrl: 'templates/loading.html'
+  });
+
+  $stateProvider
   .state('developer', {
     url: '/developer',
     templateUrl: 'templates/developer.html'
