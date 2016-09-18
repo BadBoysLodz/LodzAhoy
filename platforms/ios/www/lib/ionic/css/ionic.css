@@ -3932,7 +3932,7 @@ a.subdued {
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
-    border-color: #0c60ee;
+    border-color: #4a90e2;
     background-color: #4a90e2;
     background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
     color: #fff; }
@@ -4403,7 +4403,7 @@ a.subdued {
 
 .tabs-positive > .tabs,
 .tabs.tabs-positive {
-  border-color: #0c60ee;
+  border-color: #4a90e2;
   background-color: #4a90e2;
   background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
   color: #fff; }
@@ -4834,7 +4834,7 @@ a.subdued {
 .tabs-background-positive > .tabs {
   background-color: #4a90e2;
   background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
-  border-color: #0c60ee; }
+  border-color: #4a90e2; }
 
 .tabs-background-calm .tabs,
 .tabs-background-calm > .tabs {
@@ -5851,7 +5851,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     .item-complex.activated .item-content.item-positive.item-complex > .item-content,
     .item .item-content.active.item-positive.item-complex > .item-content,
     .item .item-content.activated.item-positive.item-complex > .item-content {
-      border-color: #0c60ee;
+      border-color: #4a90e2;
       background-color: #0c60ee; }
   .item.active.item-calm,
   .item.activated.item-calm,
