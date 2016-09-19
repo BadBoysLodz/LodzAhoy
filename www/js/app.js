@@ -59,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  
+
 
   .state('tab.ranking', {
     url: '/ranking',
@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  
+
   .state('tab.settings', {
     url: '/settings',
     views: {
@@ -80,13 +80,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   });
-    
+
   $stateProvider
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html'
   });
-  
+
   $stateProvider
   .state('developer', {
     url: '/developer',
@@ -98,7 +98,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/loading',
     templateUrl: 'templates/loading.html'
   });
-  
+
   $stateProvider
   .state('newgame', {
     url: '/newgame',
@@ -109,6 +109,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/developer');
+  $urlRouterProvider.otherwise('/tab-history');
 
 });
