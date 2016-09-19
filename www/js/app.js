@@ -97,6 +97,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/newgame');
+  $urlRouterProvider.otherwise('/tab/settings');
 
 });

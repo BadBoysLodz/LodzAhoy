@@ -1,4 +1,6 @@
 function showSplit() {
-   document.getElementById('splitMode').style.visibility = "visible";
+   //document.getElementById('splitMode').hide();
+  
+  $('splitMode').hide();
    console.log("clicked!");
 }

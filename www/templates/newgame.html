@@ -1,5 +1,4 @@
 <ion-view view-title="Start a new game">
-
   <ion-nav-buttons side="left">
     <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
       <i class="icon ion-ios-arrow-back"> Back</i>
@@ -8,17 +7,20 @@
 
   <ion-content class="padding">
     <center>
-      <button class="button button-block button-positive" style="margin-top: 150px; margin-bottom: 10px;">
+      <button class="button button-block button-positive" style="margin-top: 150px; margin-bottom: 10px;" ng-hide="showSplit">
         Single player
       </button>
       <br>
-      <button class="button button-block button-positive" style="margin-bottom: 10px;" onclick="showSplit()">
+      <button class="button button-block button-positive" style="margin-bottom: 10px;" ng-click="showSplit = !showSplit" ng-hide="showSplit">
         Multiplayer
       </button>
     </center>
-    <ion-toggle id="splitMode" style="border: 0px; margin-bottom: 80px; visibility:hidden;">
+    <ion-toggle id="splitMode"  style="border: 0px; margin-bottom: 80px;" ng-show="showSplit">
       Split mode
     </ion-toggle>
+    <a href="login"><button class="button button-block button-positive" style="margin-bottom: 10px;" ng-click="showSplit = !showSplit" ng-show="showSplit">
+        Continue
+    </button></a>
     <center><a class="positive" href="#" style="text-decoration: none;">What's the difference?</a></center>
   </ion-content>
 </ion-view>
