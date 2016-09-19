@@ -13,4 +13,5 @@ angular.module('starter.controllers', [])
     {
         $ionicHistory.goBack();
     }
+    $scope.showSplit = false;
 })

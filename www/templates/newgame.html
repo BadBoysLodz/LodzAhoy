@@ -1,5 +1,4 @@
-<ion-view view-title="New Game">
-
+<ion-view view-title="Start a new game">
   <ion-nav-buttons side="left">
     <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
       <i class="icon ion-ios-arrow-back"> Back</i>
@@ -7,18 +6,21 @@
   </ion-nav-buttons>
 
   <ion-content class="padding">
-    <h2>New Game page</h2>
-    <p>
-      This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-      If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
+    <center>
+      <button class="button button-block button-positive" style="margin-top: 150px; margin-bottom: 10px;" ng-hide="showSplit">
+        Single player
+      </button>
+      <br>
+      <button class="button button-block button-positive" style="margin-bottom: 10px;" ng-click="showSplit = !showSplit" ng-hide="showSplit">
+        Multiplayer
+      </button>
+    </center>
+    <ion-toggle id="splitMode"  style="border: 0px; margin-bottom: 80px;" ng-show="showSplit">
+      Split mode
+    </ion-toggle>
+    <a href="login"><button class="button button-block button-positive" style="margin-bottom: 10px;" ng-click="showSplit = !showSplit" ng-show="showSplit">
+        Continue
+    </button></a>
+    <center><a class="positive" href="#" style="text-decoration: none;">What's the difference?</a></center>
   </ion-content>
 </ion-view>
