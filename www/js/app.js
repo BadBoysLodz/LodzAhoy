@@ -98,6 +98,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/loading',
     templateUrl: 'templates/loading.html'
   });
+  
+  $stateProvider
+  .state('information', {
+    url: '/information',
+    templateUrl: 'templates/information.html'
+  });
 
   $stateProvider
   .state('newgame', {
@@ -109,6 +115,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab-history');
+  $urlRouterProvider.otherwise('/information');
 
 });
