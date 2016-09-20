@@ -1,14 +1,11 @@
 /* Empty. Add your own CSS if you like */
-
-a.login {
-  font-size: 16px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-button.login {
-  margin-right: 15px; 
-  top: 20px;
-  height: 93px;
-  float: right;
+.spinner-light svg {
+  width: 78px;
+  height: 78px;
+  stroke: #FFF;
+  fill: #FFF;
+  display: block;
+  margin-top: 45%;
+  margin-left: auto;
+  margin-right: auto;
 }
