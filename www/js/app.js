@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+//var ExampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
+var exampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,6 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 })
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -125,10 +127,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/maps',
     templateUrl: 'templates/maps.html'
   });
+  
+  $stateProvider
+  .state('scanqr', {
+    url: '/scanqr',
+    templateUrl: 'templates/scanqr.html'
+  });
 
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/loading');
 
+});
+
+
+exampleApp.controller("ExampleController", function($scope, $cordovaBarcodeScanner) {
+ 
+    $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
+ 
 });

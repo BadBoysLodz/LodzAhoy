@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+var ExampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,6 +23,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+exampleApp.controller("ExampleController", function($scope, $cordovaBarcodeScanner) {
+ 
+    $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
+ 
+});
+
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -38,68 +53,103 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/tabs.html'
   })
 
+
   // Each tab has its own nav history stack:
 
-  .state('tab-profile', {
+  .state('tab.profile', {
     url: '/profile',
-	templateUrl: 'templates/tab-profile.html',
-	controller: 'ProfileCtrl'  })
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
 
- .state('tab-history', {
-		url: '/history',
-		templateUrl: 'templates/tab-history.html',
-		controller: 'HistoryCtrl' })
+  .state('tab.history', {
+      url: '/history',
+      views: {
+        'tab-history': {
+          templateUrl: 'templates/tab-history.html',
+          controller: 'HistoryCtrl'
+        }
+      }
+    })
 
- .state('tab-ranking', {
+
+  .state('tab.ranking', {
     url: '/ranking',
-	templateUrl: 'templates/tab-ranking.html',
-    controller: 'RankingCtrl'})
+    views: {
+      'tab-ranking': {
+        templateUrl: 'templates/tab-ranking.html',
+        controller: 'RankingCtrl'
+      }
+    }
+  })
 
-  .state('tab-settings', {
+  .state('tab.settings', {
     url: '/settings',
-    controller: 'SettingsCtrl',
-	templateUrl: 'templates/tab-settings.html'})
+    views: {
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'SettingsCtrl'
+      }
+    }
+  })
+  
 
+  $stateProvider
   .state('login', {
     url: '/login',
-	controller: 'LoginCtrl',
-    templateUrl: 'templates/login.html'})
+    templateUrl: 'templates/login.html'
+  });
 
+  $stateProvider
   .state('developer', {
     url: '/developer',
-	controller: 'devel',
-    templateUrl: 'templates/developer.html'})
+    templateUrl: 'templates/developer.html'
+  });
 
+  $stateProvider
   .state('loading', {
     url: '/loading',
-	controller: 'loading',
-    templateUrl: 'templates/loading.html'})
+    templateUrl: 'templates/loading.html'
+  });
 
+  $stateProvider
   .state('newgame', {
     url: '/newgame',
     templateUrl: 'templates/newgame.html',
     controller: 'NewGameCtrl'
-  })
-
+  });
+  
+  $stateProvider
   .state('startPlace', {
-	  url: '/startPlace',
-	  templateUrl: 'templates/startPlace.html',
-	  controller: 'StartPlaceCtrl'
-	})
+    url: '/startPlace',
+    templateUrl: 'templates/startPlace.html'
+  });
+  
+  $stateProvider
+  .state('manuInfo', {
+    url: '/manuInfo',
+    templateUrl: 'templates/manuInfo.html'
+  });
+  
+  $stateProvider
+  .state('maps', {
+    url: '/maps',
+    templateUrl: 'templates/maps.html'
+  });
+  
+  $stateProvider
+  .state('scanqr', {
+    url: '/scanqr',
+    templateUrl: 'templates/scanqr.html'
+  });
 
-	.state('manuInfo', {
-	  url: '/manuInfo',
-	  templateUrl: 'templates/manuInfo.html',
-	  controller: 'manuInfoCtrl'
-	})
-
-	.state('maps', {
-		url: '/maps',
-		templateUrl: 'templates/maps.html',
-		controller: 'mapsCtrl'
-	})
+  $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/loading');
 
 });
