@@ -137,7 +137,7 @@ var exampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'sta
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/scanqr');
+  $urlRouterProvider.otherwise('/loading');
 
 });
 
