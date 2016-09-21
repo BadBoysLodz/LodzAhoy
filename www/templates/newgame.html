@@ -1,10 +1,10 @@
-<ion-view view-title="Puzzle">
+<ion-view view-title="New Game">
   <!-- Start a new game -->
-  <ion-nav-buttons side="left">
+  <!-- <ion-nav-buttons side="left">
     <button class="button back-button buttons button-clear header-item" ng-click="goBack()">
       <i class="icon ion-ios-arrow-back"> Back</i>
     </button>
-  </ion-nav-buttons>
+  </ion-nav-buttons> -->
 
   <ion-content class="padding">
     <center>
@@ -16,12 +16,13 @@
         Multiplayer
       </button>
     </center>
-    <ion-toggle id="splitMode"  style="border: 0px; margin-bottom: 80px;" ng-show="showSplit">
+    <ion-toggle id="splitMode"  style="border: 0px; margin-bottom: 20px;" ng-show="showSplit">
       Split mode
     </ion-toggle>
-    <a href="login"><button class="button button-block button-positive" style="margin-bottom: 10px;" ng-click="showSplit = !showSplit" ng-show="showSplit">
+    <a href="#/startPlace"><button class="button button-block button-positive" style="margin-bottom: 30px;" ng-click="showSplit = !showSplit" ng-show="showSplit">
         Continue
     </button></a>
-    <center><a class="positive" href="#" style="text-decoration: none;">What's the difference?</a></center>
+    <br><br>
+    <center><a class="positive" href="#" ng-hide="showSplit" style="text-decoration: none;">What's the difference?</a></center>
   </ion-content>
 </ion-view>
