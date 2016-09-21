@@ -44,55 +44,55 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/profile',
 	templateUrl: 'templates/tab-profile.html',
 	controller: 'ProfileCtrl'  })
-		
+
  .state('tab-history', {
 		url: '/history',
 		templateUrl: 'templates/tab-history.html',
 		controller: 'HistoryCtrl' })
-	
+
  .state('tab-ranking', {
     url: '/ranking',
 	templateUrl: 'templates/tab-ranking.html',
     controller: 'RankingCtrl'})
-  
+
   .state('tab-settings', {
     url: '/settings',
     controller: 'SettingsCtrl',
 	templateUrl: 'templates/tab-settings.html'})
-  
+
   .state('login', {
     url: '/login',
 	controller: 'LoginCtrl',
     templateUrl: 'templates/login.html'})
-  
+
   .state('developer', {
     url: '/developer',
 	controller: 'devel',
     templateUrl: 'templates/developer.html'})
-  
+
   .state('loading', {
     url: '/loading',
 	controller: 'loading',
     templateUrl: 'templates/loading.html'})
-  
+
   .state('newgame', {
     url: '/newgame',
     templateUrl: 'templates/newgame.html',
     controller: 'NewGameCtrl'
   })
-  
+
   .state('startPlace', {
 	  url: '/startPlace',
 	  templateUrl: 'templates/startPlace.html',
 	  controller: 'StartPlaceCtrl'
 	})
-	
+
 	.state('manuInfo', {
 	  url: '/manuInfo',
 	  templateUrl: 'templates/manuInfo.html',
 	  controller: 'manuInfoCtrl'
 	})
-	
+
 	.state('maps', {
 		url: '/maps',
 		templateUrl: 'templates/maps.html',
@@ -100,6 +100,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	})
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/loading');
+  $urlRouterProvider.otherwise('/login');
 
 });
