@@ -133,6 +133,12 @@ var exampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'sta
     url: '/scanqr',
     templateUrl: 'templates/scanqr.html'
   });
+  
+    $stateProvider
+  .state('puzzle', {
+    url: '/puzzle',
+    templateUrl: 'templates/puzzle.html'
+  });
 
   $urlRouterProvider.otherwise("/");
 
