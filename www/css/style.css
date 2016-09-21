@@ -5,7 +5,15 @@
   stroke: #FFF;
   fill: #FFF;
   display: block;
-  margin-top: 40%;
+  margin-top: 45%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.listy {
+  padding: 10px;
+}
+
+.badgy {
+  padding-right: 60px;
 }
