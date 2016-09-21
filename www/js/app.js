@@ -137,13 +137,12 @@ var exampleApp = angular.module('starter', ['ionic', 'starter.controllers', 'sta
   $urlRouterProvider.otherwise("/");
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/loading');
+  $urlRouterProvider.otherwise('/scanqr');
 
 });
 
 
 exampleApp.controller("ExampleController", function($scope, $cordovaBarcodeScanner) {
- 
     $scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
